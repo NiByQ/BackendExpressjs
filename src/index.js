@@ -1,14 +1,11 @@
 import express from "express";
 import moviesRoutes from "./routes/movies.routes.js";
+import { MoviesList } from "./viue/moves.list.js";
 
 const app = express();
 app.use(express.json());
 
 const port = 3005;
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
 app.use("/api/movies", moviesRoutes);
 
