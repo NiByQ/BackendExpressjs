@@ -11,7 +11,7 @@ export function createMovie(req, res, next) {
     return next(new Error("Title and description are required"));
   }
 
-  movies.push({ id: movies.length + 1, ...movie });
+  movies.push({ id: movies.length + 1, ...movie, like: 0 });
 
   res.status(201).json({ message: "Movie created successfully", movie });
 }
